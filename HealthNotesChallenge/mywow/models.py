@@ -2,13 +2,24 @@ from django.db import models
 
 # Create your models here.
 class Practitioner(models.Model):
-    pass
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    occupation = models.CharField(max_length=255)
+    degree = models.CharField(max_length=255)
+    email = models.CharField(max_length=255) 
+    phone = models.CharField(max_length=255)
 
 class Conditions(models.Model):
-    pass
-
+    name_condition = models.CharField(max_length=255)
+      
 class Treatments(models.Model):
-    pass
+    medical = models.BooleanField()
+    surgical = models.BooleanField()
+    radiation = models.BooleanField()
+    chemotherapy = models.BooleanField()
+    other_alternative = models.CharField(max_length=255)
+    palliative = models.CharField(max_length=255)
+    clinical_trials = models.BooleanField()
 
 class Tag(models.Model):
     tag_id = models.AutoField(primary_key=True)
